@@ -1,0 +1,38 @@
+diff -Nur ndas-1.0.3-101.orig/Makefile ndas-1.0.3-101.Makefile/Makefile
+--- ndas-1.0.3-101.orig/Makefile	2006-08-24 00:01:35.000000000 +0000
++++ ndas-1.0.3-101.Makefile/Makefile	2006-11-13 22:10:20.000000000 +0000
+@@ -28,7 +28,11 @@
+ # and fitness for purpose.
+ #-------------------------------------------------------------------------
+ # The top most directory of ndas driver
++ifdef M
++ndas_root := $(M)
++else
+ ndas_root?=$(shell pwd)
++endif
+ 
+ #
+ # Set the ndas version and ndas build
+@@ -180,12 +184,7 @@
+ 
+ ndas_cmd_app_cpp=$(ndas-um-cpp) $(ndas-app-cflags) -c -o $@ $<
+ 
+-ndas-app-ldflags:=$(shell echo $(ndas-app-ldflags) | sed -e 's|^ *||')
+-ifeq ($(ndas-app-ldflags),)
+-ndas_cmd_app_ld=$(ndas-um-cc) $(ndas-app-cflags) -o $@ $^ 
+-else
+-ndas_cmd_app_ld=$(ndas-um-cc) $(ndas-app-cflags) -Wl,"$(ndas-app-ldflags)" -o $@ $^ 
+-endif
++ndas_cmd_app_ld=$(ndas-um-cc) $(ndas-app-cflags) $(ndas-app-ldflags) -o $@ $^
+ 
+ #
+ # Linux Module Source
+@@ -201,7 +200,7 @@
+ 
+ ifeq ($(wildcard $(ndas_root)/libndas.a.sfx),$(ndas_root)/libndas.a.sfx)
+ $(ndas_root)/libndas.a: $(ndas_root)/libndas.a.sfx
+-	cd $(ndas_root) ; /bin/sh $<
++	tail -n +119 $< > $@
+ endif
+ #
+ # Build NDAS admin tool
