@@ -25,7 +25,7 @@ Patch0:		%{name}-Makefile.patch
 URL:		http://www.ximeta.com/
 %if %{with kernel}
 %{?with_dist_kernel:BuildRequires:	kernel%{_alt_kernel}-module-build >= 3:2.6.14}
-BuildRequires:	rpmbuild(macros) >= 1.326
+BuildRequires:	rpmbuild(macros) >= 1.330
 %endif
 #BuildRequires:	-
 #Requires(postun):	-
