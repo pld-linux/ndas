@@ -1,6 +1,6 @@
 diff -Nur ndas-1.0.3-101.orig/Makefile ndas-1.0.3-101.Makefile/Makefile
---- ndas-1.0.3-101.orig/Makefile	2006-08-24 00:01:35.000000000 +0000
-+++ ndas-1.0.3-101.Makefile/Makefile	2006-11-13 22:10:20.000000000 +0000
+--- ndas-1.0.3-101.orig/Makefile	2006-08-24 03:01:35.000000000 +0300
++++ ndas-1.0.3-101.Makefile/Makefile	2006-11-15 19:44:26.000000000 +0200
 @@ -28,7 +28,11 @@
  # and fitness for purpose.
  #-------------------------------------------------------------------------
@@ -36,3 +36,11 @@ diff -Nur ndas-1.0.3-101.orig/Makefile ndas-1.0.3-101.Makefile/Makefile
  endif
  #
  # Build NDAS admin tool
+@@ -278,6 +277,7 @@
+ #
+ # Added DEBUG define if applicable
+ EXTRA_CFLAGS := $(ndas-kernel-cflags)
++EXTRA_CFLAGS += $(OPT_EXTRA_CFLAGS)
+ ifneq ($(NDAS_REDHAT),)
+ EXTRA_CFLAGS += -DNDAS_REDHAT
+ endif
