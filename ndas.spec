@@ -11,8 +11,8 @@
 %endif
 
 %define		_rel	0.1
-Summary:	-
-Summary(pl):	-
+Summary:	Linux NDAS driver
+Summary(pl):	Linuksowy sterownik NDAS
 Name:		ndas
 Version:	1.0.3
 %define         _subver 101
@@ -27,20 +27,14 @@ URL:		http://www.ximeta.com/
 %{?with_dist_kernel:BuildRequires:	kernel%{_alt_kernel}-module-build >= 3:2.6.14}
 BuildRequires:	rpmbuild(macros) >= 1.330
 %endif
-#BuildRequires:	-
-#Requires(postun):	-
-#Requires(pre,post):	-
-#Requires(preun):	-
-#Requires:	-
-#Provides:	-
-#Obsoletes:	-
-#Conflicts:	-
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+Linux NDAS driver.
 
 %description -l pl
+Linuksowy sterownik NDAS.
 
 # kernel subpackages.
 
