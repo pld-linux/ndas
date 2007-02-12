@@ -12,7 +12,7 @@
 
 %define		_rel	0.1
 Summary:	Linux NDAS driver
-Summary(pl):	Linuksowy sterownik NDAS
+Summary(pl.UTF-8):   Linuksowy sterownik NDAS
 Name:		ndas
 Version:	1.0.3
 %define         _subver 101
@@ -33,14 +33,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Linux NDAS driver.
 
-%description -l pl
+%description -l pl.UTF-8
 Linuksowy sterownik NDAS.
 
 # kernel subpackages.
 
 %package -n kernel%{_alt_kernel}-block-ndas
 Summary:	Linux driver for NDAS
-Summary(pl):	Sterownik dla Linuksa do NDAS
+Summary(pl.UTF-8):   Sterownik dla Linuksa do NDAS
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
@@ -54,14 +54,14 @@ This is driver for NDAS for Linux.
 
 This package contains Linux module.
 
-%description -n kernel%{_alt_kernel}-block-ndas -l pl
+%description -n kernel%{_alt_kernel}-block-ndas -l pl.UTF-8
 Sterownik dla Linuksa do NDAS.
 
-Ten pakiet zawiera modu³ j±dra Linuksa.
+Ten pakiet zawiera moduÅ‚ jÄ…dra Linuksa.
 
 %package -n kernel%{_alt_kernel}-smp-block-ndas
 Summary:	Linux SMP driver for NDAS
-Summary(pl):	Sterownik dla Linuksa SMP do NDAS
+Summary(pl.UTF-8):   Sterownik dla Linuksa SMP do NDAS
 Release:	%{_rel}@%{_kernel_ver_str}
 Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
@@ -75,10 +75,10 @@ This is driver for NDAS for Linux.
 
 This package contains Linux SMP module.
 
-%description -n kernel%{_alt_kernel}-smp-block-ndas -l pl
+%description -n kernel%{_alt_kernel}-smp-block-ndas -l pl.UTF-8
 Sterownik dla Linuksa do NDAS.
 
-Ten pakiet zawiera modu³ j±dra Linuksa SMP.
+Ten pakiet zawiera moduÅ‚ jÄ…dra Linuksa SMP.
 
 %prep
 %setup -q -n %{name}-%{version}-%{_subver}
