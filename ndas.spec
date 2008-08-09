@@ -45,7 +45,6 @@ Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
 %requires_releq_kernel
 Requires(postun):	%releq_kernel
-%endif
 
 %description -n kernel%{_alt_kernel}-block-ndas
 This is driver for NDAS for Linux.
