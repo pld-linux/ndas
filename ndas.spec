@@ -9,17 +9,16 @@
 %undefine	with_dist_kernel
 %endif
 
-%define		_rel	0.1
 Summary:	Linux NDAS driver
 Summary(pl.UTF-8):	Linuksowy sterownik NDAS
 Name:		ndas
-Version:	1.0.4
-%define         _subver 38
-Release:	%{_rel}
-License:	GPL/BSD/other (!!)
+Version:	1.1
+%define         _subver 24
+Release:	1
+License:	Custom License (see EULA.txt)
 Group:		Base/Kernel
-Source0:	http://code.ximeta.com/dev/%{version}/%{_subver}/linux/%{name}-%{version}-%{_subver}.tar.gz
-# Source0-md5:	717fa41916b600cf8200433808d6fcb7
+Source0:	http://code.ximeta.com/dev/current/linux/%{name}-%{version}-%{_subver}.tar.gz
+# Source0-md5:	ccedb4db57f302674ebe93bf148d7188
 Patch0:		%{name}-Makefile.patch
 URL:		http://www.ximeta.com/
 %if %{with kernel}
@@ -95,6 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %if %{with userspace}
 %files
+%doc EULA.txt README
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/ndasadmin
 %endif
