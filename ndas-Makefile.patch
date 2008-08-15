@@ -1,18 +1,18 @@
 diff -Nur ndas-1.0.3-101.orig/Makefile ndas-1.0.3-101.Makefile/Makefile
 --- ndas-1.0.3-101.orig/Makefile	2006-08-24 03:01:35.000000000 +0300
 +++ ndas-1.0.3-101.Makefile/Makefile	2006-11-15 19:44:26.000000000 +0200
-@@ -28,7 +28,11 @@
- # and fitness for purpose.
+@@ -29,7 +29,11 @@
  #-------------------------------------------------------------------------
  # The top most directory of ndas driver
+ 
 +ifdef M
 +ndas_root := $(M)
 +else
  ndas_root?=$(shell pwd)
 +endif
+ include $(ndas_root)/version.mk
  
  #
- # Set the ndas version and ndas build
 @@ -180,12 +184,7 @@
  
  ndas_cmd_app_cpp=$(ndas-um-cpp) $(ndas-app-cflags) -c -o $@ $<
