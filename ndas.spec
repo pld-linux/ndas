@@ -13,11 +13,11 @@ Summary:	Linux NDAS driver
 Summary(pl.UTF-8):	Linuksowy sterownik NDAS
 Name:		ndas
 Version:	1.1
-%define         _subver 24
+%define         subver 24
 Release:	1
 License:	Custom License (see EULA.txt)
 Group:		Base/Kernel
-Source0:	http://code.ximeta.com/dev/current/linux/%{name}-%{version}-%{_subver}.tar.gz
+Source0:	http://code.ximeta.com/dev/current/linux/%{name}-%{version}-%{subver}.tar.gz
 # Source0-md5:	ccedb4db57f302674ebe93bf148d7188
 Patch0:		%{name}-Makefile.patch
 URL:		http://www.ximeta.com/
@@ -56,7 +56,7 @@ Sterownik dla Linuksa do NDAS.
 Ten pakiet zawiera moduł jądra Linuksa.
 
 %prep
-%setup -q -n %{name}-%{version}-%{_subver}
+%setup -q -n %{name}-%{version}-%{subver}
 %patch0 -p1
 
 %build
