@@ -57,7 +57,7 @@ Ten pakiet zawiera moduł jądra Linuksa.
 
 %prep
 %setup -q -n %{name}-%{version}-%{subver}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %if %{with userspace}
